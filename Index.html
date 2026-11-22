@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="সৌমিক দাশের ব্যক্তিগত ও সক্রিয় ওয়েবসাইট। স্কাউটিং, শিক্ষাজীবন এবং ফুটবল।">
+<title>সৌমিক দাশ | Personal Portfolio</title>
+
+<style>
+:root {
+  --bg-dark: #090909;
+  --bg-card: #151515;
+  --bg-elevated: #1e1c16;
+  --gold: #e4c16e;
+  --gold-dim: #80652d;
+  --gold-bright: #f5da94;
+  --text-main: #ffffff;
+  --text-muted: #cccccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* HEADER & NAV */
+header {
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 15px 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h2 {
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background: var(--gold);
+  color: #111;
+  font-weight: bold;
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 75px 20px;
+  background: radial-gradient(circle at top, #29200d 0%, #090909 70%);
+}
+
+.welcome {
+  display: inline-block;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  color: var(--gold);
+  font-size: 42px;
+  margin-top: 10px;
+}
+
+.typing-box {
+  font-size: 20px;
+  color: var(--gold-bright);
+  min-height: 36px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background: var(--gold);
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 15px auto 0;
+}
+
+.hero-img-wrap {
+  margin-top: 25px;
+}
+
+.hero img {
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 25px rgba(228, 193, 110, 0.35);
+  transition: transform 0.4s;
+}
+
+.hero img:hover {
+  transform: scale(1.06);
+}
+
+/* SECTIONS & CARDS */
+section {
+  padding: 65px 20px;
+  border-bottom: 1px solid #2b2313;
+  scroll-margin-top: 110px;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--gold);
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.card {
+  max-width: 850px;
+  margin: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-dim);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.6s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  padding: 30px;
+}
+
+.content h3 {
+  color: var(--gold);
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.content p, .content li {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.content ul {
+  padding-left: 22px;
+  margin-bottom: 15px;
+}
+
+/* INTERACTIVE WIDGETS */
+.interactive-box {
+  background: var(--bg-elevated);
+  border: 1px solid var(--gold-dim);
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 20px;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-outline.active,
+.btn-outline:hover {
+  background: var(--gold);
+  color: #111;
+  font-weight: bold;
+}
+
+.tab-panel {
+  display: none;
+  color: var(--text-main);
+  font-size: 15px;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* STUDY CHECKLIST */
+.task-list {
+  list-style: none !important;
+  padding-left: 0 !important;
